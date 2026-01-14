@@ -4,6 +4,5 @@
     public string Codigo { get; set; }
     public decimal Preco { get; set; }
 
-    public string Descricao =>
-        $"Produto: {Nome} | Código: {Codigo} | Preço: R$ {Preco}";
+    public string Descricao => $"Produto: {Nome} | Código: {Codigo} | Preço: R$ {Preco}";
 }

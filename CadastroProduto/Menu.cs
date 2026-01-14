@@ -1,5 +1,8 @@
 ﻿class Menu {
 
+    List<Produto> produtos = new List<Produto>();
+
+
     void exibirLogo()
     {
         Console.WriteLine(@"
@@ -16,6 +19,7 @@
     {
         CadProdutoService cadProdutoService = new CadProdutoService();
 
+
         exibirLogo();
 
         Console.WriteLine("\n=== Menu de Cadastro de Produtos ===");
@@ -25,11 +29,12 @@
         Console.WriteLine("3. Sair");
         Console.Write("Escolha uma opção: ");
 
+        
+
+
         if (!int.TryParse(Console.ReadLine(), out int opcoes))
         {
             Console.WriteLine("Opção inválida.");
-            Thread.Sleep(1000);
-            exibirMenu();
             Console.Clear();
             return;
         }
@@ -38,13 +43,12 @@
         {
             // no Menu
             case 1:
-                new CadProdutoService().CadastrarProduto();
+                cadProdutoService.CadastrarProduto(produtos);
                 break;
 
             case 2:
-                new CadProdutoService().ListarProdutos();
+                cadProdutoService.ListarProdutos(produtos);
                 break;
-
 
             case 3:
                 return;
@@ -53,6 +57,8 @@
                 Console.WriteLine("Opção inválida.");
                 break;
         }
+
+        exibirMenu();
     }
 
    

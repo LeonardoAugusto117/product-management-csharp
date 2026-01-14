@@ -1,8 +1,6 @@
 ﻿class CadProdutoService
 {
-    private List<Produto> produtos = new List<Produto>();
-    Menu Menu = new Menu();
-    public void CadastrarProduto()
+    public void CadastrarProduto(List<Produto> produtos)
     {
         
         Console.Clear();
@@ -32,12 +30,9 @@
             Console.Clear();
         }
 
-        Thread.Sleep(1000);
-        Menu.exibirMenu();
-
     }
 
-    public void ListarProdutos()
+    public void ListarProdutos(List<Produto> produtos)
     {
         Console.Clear();
         ExibirTituloDaOpcao("Lista dos produtos");
@@ -66,4 +61,5 @@
         Console.WriteLine(titulo);
         Console.WriteLine(asteriscos + "\n");
     }
+
 }
