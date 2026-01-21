@@ -26,7 +26,8 @@
         Console.WriteLine();
         Console.WriteLine("1. Cadastrar Produto");
         Console.WriteLine("2. Listar Produtos");
-        Console.WriteLine("3. Sair");
+        Console.WriteLine("3. Remover Produto");
+        Console.WriteLine("4. Sair");
         Console.Write("Escolha uma opção: ");
 
         
@@ -45,14 +46,15 @@
             case 1:
                 cadProdutoService.CadastrarProduto(produtos);
                 break;
-
             case 2:
                 cadProdutoService.ListarProdutos(produtos);
                 break;
-
             case 3:
+                cadProdutoService.RemoveProdutoList(produtos);
+                break;
+            case 4:
+                Console.WriteLine("Saindo do programa...");
                 return;
-
             default:
                 Console.WriteLine("Opção inválida.");
                 break;
